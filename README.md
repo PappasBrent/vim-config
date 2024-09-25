@@ -5,7 +5,7 @@
 - Clone this repo to your home directory with the name `.vim`:
 
     ```bash
-    git clone https://github.com/pappasBrent/vim-config .vim
+    git clone https://github.com/pappasBrent/vim-config.git .vim
     ```
 - Run `download-vim-plug.sh` to install vim-plug to manage plugins:
 
