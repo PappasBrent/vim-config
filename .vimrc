@@ -50,6 +50,9 @@ set wildmode=list:longest
 " Enable terminal GUI colors for catppuccin theme.
 set termguicolors
 
+" Tell the terminal not to wait for sequences starting with the escape key.
+set ttimeoutlen=0
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
