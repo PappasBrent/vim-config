@@ -47,6 +47,12 @@ set wildmenu
 " Make wildmenu behave like Bash completion.
 set wildmode=list:longest
 
+" Enable terminal GUI colors for catppuccin theme.
+set termguicolors
+
+" ALE: Fix on save."
+let g:ale_fix_on_save = 1
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
@@ -57,7 +63,14 @@ Plug 'preservim/nerdtree'
 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+Plug 'catppuccin/vim', { 'as': 'catppuccin', }
+
 call plug#end()
+
+" Color schemes should be loaded after plug#end().
+" Prepend it with silent! to ignore errors when a color scheme is not yet
+" installed.
+silent! colorscheme catppuccin_frappe
 
 " }}}
 
