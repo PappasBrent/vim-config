@@ -50,9 +50,6 @@ set wildmode=list:longest
 " Enable terminal GUI colors for catppuccin theme.
 set termguicolors
 
-" ALE: Fix on save."
-let g:ale_fix_on_save = 1
-
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
@@ -65,12 +62,21 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'catppuccin/vim', { 'as': 'catppuccin', }
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
-" Color schemes should be loaded after plug#end().
-" Prepend it with silent! to ignore errors when a color scheme is not yet
-" installed.
+" Set plugin-specific settings after plug#end().
+" Prepend commands with silent! to ignore errors.
+
 silent! colorscheme catppuccin_frappe
+
+" ALE: Fix on save."
+silent! let g:ale_fix_on_save = 1
+
+silent! let g:ale_linters_explicit = 1
 
 " }}}
 
