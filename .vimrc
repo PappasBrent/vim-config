@@ -8,6 +8,9 @@ filetype indent on
 
 syntax on
 
+" Make backspace work like other editors.
+set backspace=indent,eol,start
+
 set rnu
 
 set shiftwidth=4
@@ -69,6 +72,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
@@ -80,6 +85,9 @@ silent! colorscheme catppuccin_frappe
 silent! let g:ale_fix_on_save = 1
 
 silent! let g:ale_linters_explicit = 1
+
+" YouCompleteMe: Clangd binary path
+silent! let g:ycm_clangd_binary_path='/usr/bin/clangd'
 
 " }}}
 
@@ -107,7 +115,10 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " NERDTree specific mappings.
-nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeToggle<CR>
+
+" ALE go to definition.
+nnoremap <leader>gd :ALEGoToDefinition<CR>
 
 " }}}
 
