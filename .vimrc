@@ -72,7 +72,13 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'prabirshrestha/vim-lsp'
+
+Plug 'rhysd/vim-lsp-ale'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
