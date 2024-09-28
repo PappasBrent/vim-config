@@ -164,6 +164,12 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 " ALE: Go to definition.
 nnoremap <leader>gd :ALEGoToDefinition<CR>
 
+" FZF: Search files (excluding files that Git ignores).
+nnoremap ff :GFiles<CR>
+
+" FZF: Ripgrep search.
+nnoremap fg :Rg<CR>
+
 " }}}
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
