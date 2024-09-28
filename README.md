@@ -9,6 +9,7 @@
 <!-- TODO(Brent): See if you can get this to work without installing Lua or Perl... -->
 - Lua
 - Perl
+- Ripgrep
 
 ## Quickstart
 
