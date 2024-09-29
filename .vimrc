@@ -8,6 +8,9 @@ filetype indent on
 
 syntax on
 
+" Show column number.
+set ruler
+
 " Make backspace work like other editors.
 set backspace=indent,eol,start
 
@@ -27,8 +30,10 @@ set nowrap
 
 set incsearch
 
+" Turn off case-sensitive searching.
 set ignorecase
 
+" Turn on case-sensitive searching if we are searching for capital letters.
 set smartcase
 
 " Show commands as you enter them in the bottom of the screen.
@@ -79,6 +84,8 @@ Plug 'rhysd/vim-lsp-ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'junegunn/fzf.vim'
+
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -149,14 +156,17 @@ nnoremap N Nzz
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
+" Prevent Gnome terminal from eating alt keys so we can use them in mappings.
+execute "set <A-j>=\ej"
+execute "set <A-k>=\ek"
+
 " Move lines up and down in normal, insert, and visual mode.
-" I would use alt for this, but the Gnome terminal intercepts the alt key.
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " NERDTree: Toggle window.
 nnoremap <leader>t :NERDTreeToggle<CR>
