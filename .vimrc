@@ -98,9 +98,7 @@ call plug#end()
 
 silent! colorscheme catppuccin_frappe
 
-" ALE: Fix on save."
-silent! let g:ale_fix_on_save = 1
-
+" ALE: Only use the linters I specifically tell ALE to use.
 silent! let g:ale_linters_explicit = 1
 
 " YouCompleteMe: Clangd binary path.
