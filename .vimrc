@@ -179,7 +179,7 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>gd :ALEGoToDefinition<CR>
 
 " FZF: Search files (excluding files that Git ignores).
-nnoremap ff :GFiles<CR>
+nnoremap <leader>ff :GFiles<CR>
 
 " FZF: Ripgrep search.
 nnoremap <leader>fg :Rg<CR>
