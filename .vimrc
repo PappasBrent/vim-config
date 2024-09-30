@@ -83,6 +83,8 @@ Plug 'prabirshrestha/asyncomplete.vim'
 
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+Plug 'mattn/vim-lsp-settings'
+
 Plug 'rhysd/vim-lsp-ale'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
