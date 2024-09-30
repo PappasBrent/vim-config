@@ -101,9 +101,6 @@ silent! colorscheme catppuccin_frappe
 " ALE: Only use the linters I specifically tell ALE to use.
 silent! let g:ale_linters_explicit = 1
 
-" YouCompleteMe: Clangd binary path.
-silent! let g:ycm_clangd_binary_path='/usr/bin/clangd'
-
 " LSP: Set up language servers.
 if executable('clangd')
     au User lsp_setup call lsp#register_server({
