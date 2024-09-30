@@ -79,6 +79,10 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'prabirshrestha/vim-lsp'
 
+Plug 'prabirshrestha/asyncomplete.vim'
+
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 Plug 'rhysd/vim-lsp-ale'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -178,7 +182,12 @@ nnoremap <leader>gd :ALEGoToDefinition<CR>
 nnoremap ff :GFiles<CR>
 
 " FZF: Ripgrep search.
-nnoremap fg :Rg<CR>
+nnoremap <leader>fg :Rg<CR>
+
+" asyncomplete: Default mappings from GitHub.
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " }}}
 
