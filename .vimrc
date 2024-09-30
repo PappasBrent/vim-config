@@ -133,7 +133,12 @@ function! s:on_lsp_buffer_enabled() abort
     " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
     let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    " Default is 200.
+    let g:lsp_completion_resolve_timeout = 100
+    " Default is 500.
+    let g:lsp_diagnostics_virtual_text_delay = 100
+    " Add more file extensions here for format on save.
+    autocmd! BufWritePre *.c,*.h call execute('LspDocumentFormatSync')
 
     " refer to doc to add more commands
 endfunction
