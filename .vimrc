@@ -135,7 +135,7 @@ function! s:on_lsp_buffer_enabled() abort
     " Default is 500.
     let g:lsp_diagnostics_virtual_text_delay = 100
     " Add more file extensions here for format on save.
-    autocmd! BufWritePre *.c,*.h call execute('LspDocumentFormatSync')
+    autocmd! BufWritePre *.c,*.h,*.tex call execute('LspDocumentFormatSync')
 
     " refer to doc to add more commands
 endfunction
