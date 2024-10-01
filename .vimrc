@@ -61,6 +61,10 @@ set termguicolors
 " Tell the terminal not to wait for sequences starting with the escape key.
 set ttimeoutlen=0
 
+" After writing to a buffer, only wait 100ms before writing to swap file
+" (default is 4000ms). This also affects git gutter's update time as well.
+set updatetime=100
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
