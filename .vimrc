@@ -97,6 +97,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
