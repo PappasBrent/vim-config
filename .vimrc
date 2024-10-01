@@ -205,6 +205,22 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+" Toggle auto formatting paragraph.
+" Taken from https://stackoverflow.com/a/71135553/6824430
+function! ToggleFormat()
+    if &formatoptions !~ 'a'
+        set fo+=a
+    else
+        set fo-=a
+    endif
+    " Print the value of formatoptions afterward.
+    set formatoptions
+endfunction
+
+" Add mappin to call the function.
+
+nnoremap <leader>a :call ToggleFormat()<CR>
+
 " }}}
 
 " STATUS LINE ------------------------------------------------------------ {{{
