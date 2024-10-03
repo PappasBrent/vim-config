@@ -191,6 +191,7 @@ nnoremap <C-d> <C-d>zz
 " Prevent Gnome terminal from eating alt keys so we can use them in mappings.
 execute "set <A-j>=\ej"
 execute "set <A-k>=\ek"
+execute "set <A-q>=\eq"
 
 " Move lines up and down in normal, insert, and visual mode.
 nnoremap <A-j> :m .+1<CR>==
@@ -199,6 +200,9 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Quickly rewrap paragraph.
+nnoremap <A-q> gwap
 
 " NERDTree: Toggle window.
 nnoremap <leader>t :NERDTreeToggle<CR>
