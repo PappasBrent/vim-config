@@ -99,6 +99,9 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'tpope/vim-commentary'
 
+" Display the current match number while iterating matches.
+Plug 'obcat/vim-hitspop'
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
@@ -108,6 +111,10 @@ silent! colorscheme catppuccin_frappe
 
 " ALE: Only use the linters I specifically tell ALE to use.
 silent! let g:ale_linters_explicit = 1
+
+" vim-hitspop: Display match number in bottom right corner of the screen.
+let g:hitspop_line   = 'winbot'
+let g:hitspop_column = 'winright'
 
 " LSP: Set up language servers.
 if executable('clangd')
