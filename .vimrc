@@ -122,6 +122,9 @@ silent! let g:ale_linters_explicit = 1
 let g:hitspop_line   = 'winbot'
 let g:hitspop_column = 'winright'
 
+" Goyo: Increase default width.
+let g:goyo_width = 85
+
 " Limelight: Goyo integration.
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
