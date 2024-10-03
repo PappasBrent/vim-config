@@ -102,6 +102,12 @@ Plug 'tpope/vim-commentary'
 " Display the current match number while iterating matches.
 Plug 'obcat/vim-hitspop'
 
+" Zen mode for Vim.
+Plug 'junegunn/goyo.vim'
+
+" Highlight active paragraph.
+Plug 'junegunn/limelight.vim'
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
@@ -115,6 +121,10 @@ silent! let g:ale_linters_explicit = 1
 " vim-hitspop: Display match number in bottom right corner of the screen.
 let g:hitspop_line   = 'winbot'
 let g:hitspop_column = 'winright'
+
+" Limelight: Goyo integration.
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " LSP: Set up language servers.
 if executable('clangd')
@@ -206,6 +216,9 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " Fugitive: Extra mappings.
 nnoremap <leader>gp :Git push<CR>
+
+" Goyo: Toggle.
+nnoremap zen :Goyo<CR>
 
 " }}}
 
