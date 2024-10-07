@@ -22,20 +22,15 @@
 
     ./configure --with-features=huge \
         --enable-multibyte \
-        --enable-rubyinterp=yes \
-        --enable-pythoninterp=yes \
-        --with-python-config-dir=$(python2-config --configdir) \
         --enable-python3interp=yes \
         --with-python3-config-dir=$(python3-config --configdir) \
-        --enable-perlinterp=yes \
-        --enable-luainterp=yes \
         --enable-gui=gtk2 \
         --enable-cscope \
         --prefix=/usr/local
 
     make -j 8 VIMRUNTIMEDIR=/usr/local/share/vim/vim91
     sudo make install
-    sudo update-alternatives /usr/bin/vim vim /usr/local/bin/vim 100
+    sudo update-alternatives --install /usr/bin/vim vim /usr/local/bin/vim 100
     ```
 
 - Clone this repo to your home directory with the name `.vim`:
