@@ -155,6 +155,7 @@ function! s:on_lsp_buffer_enabled() abort
     " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
+    " Default is ???.
     let g:lsp_format_sync_timeout = 1000
     " Default is 200.
     let g:lsp_completion_resolve_timeout = 100
