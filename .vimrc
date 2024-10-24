@@ -99,6 +99,9 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'tpope/vim-commentary'
 
+" Easily surround text with quotes, brackets, etc.
+Plug 'tpope/vim-surround'
+
 " Display the current match number while iterating matches.
 Plug 'obcat/vim-hitspop'
 
