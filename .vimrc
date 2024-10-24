@@ -181,6 +181,11 @@ augroup END
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled = 1
 
+" Don't automatically insert bullets in Markdown files because this has
+" issues.
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_auto_insert_bullets = 0
+
 " }}}
 
 " MAPPINGS --------------------------------------------------------------- {{{
