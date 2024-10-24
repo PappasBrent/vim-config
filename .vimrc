@@ -108,6 +108,11 @@ Plug 'junegunn/goyo.vim'
 " Highlight active paragraph.
 Plug 'junegunn/limelight.vim'
 
+" Text-alignment plugin necessary for vim-markdown.
+Plug 'godlygeek/tabular'
+
+Plug 'preservim/vim-markdown'
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
@@ -134,7 +139,7 @@ if executable('clangd')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
         \ 'cmd': {server_info->['clangd']},
-        \ 'allowlist': ['c', 'h'],
+        \ 'allowlist': ['c', 'cpp', 'h'],
         \ })
 endif
 
@@ -172,6 +177,9 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" Disable Markdown folding
+let g:vim_markdown_folding_disabled = 1
 
 " }}}
 
