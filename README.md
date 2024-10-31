@@ -5,9 +5,11 @@
 - markdownlint-cli
   - `npm install -g markdownlint-cli`
 - Python 3.8+
-- Ripgrep
+- Ripgrep for fuzzy search
 - `python3-config`
-- Prettier
+- Prettier for Markdown formatting
+- Pyright Python LSP
+- Autopep8 for Python formatting
 
 ## Quickstart
 
