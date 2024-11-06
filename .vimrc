@@ -221,6 +221,10 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Quickly rewrap paragraph.
 nnoremap <A-q> gwap
 
+" Copy to clipboard.
+vnoremap <C-y> "+y
+nnoremap <C-y> "+Y
+
 " NERDTree: Toggle window.
 nnoremap <leader>t :NERDTreeToggle<CR>
 
