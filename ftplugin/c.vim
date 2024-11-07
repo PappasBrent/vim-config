@@ -1,5 +1,5 @@
-" Format with clang-format and fix with clangtidy.
-let b:ale_fixers = ['clang-format', 'clangtidy']
+" Format with clang-format.
+let b:ale_fixers = ['clang-format']
 " Lint with clangd and clangtidy.
 let b:ale_linters = {'c': ['clangd', 'clangtidy']}
 " Common linting options.
