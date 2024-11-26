@@ -129,6 +129,7 @@ silent! let g:ale_linters_explicit = 1
 " vim-hitspop: Display match number in bottom right corner of the screen.
 let g:hitspop_line   = 'winbot'
 let g:hitspop_column = 'winright'
+let g:hitspop_timeout = 100
 
 " Goyo: Increase default width.
 let g:goyo_width = 85
