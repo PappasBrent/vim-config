@@ -116,6 +116,9 @@ Plug 'godlygeek/tabular'
 
 Plug 'preservim/vim-markdown'
 
+" Dictionary
+Plug 'farconics/victionary'
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
