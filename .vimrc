@@ -277,6 +277,10 @@ endfunction
 " Add mapping to call the function.
 nnoremap <leader>a :call ToggleFormat()<CR>
 
+" Before running a quickfix command, enable autowrite. This to make it easier
+" to rename across files without vim stopping to ask us to save changes.
+autocmd QuickFixCmdPre * set autowrite
+
 " }}}
 
 " STATUS LINE ------------------------------------------------------------ {{{
