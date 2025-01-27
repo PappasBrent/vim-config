@@ -274,7 +274,7 @@ function! ToggleFormat()
     set formatoptions
 endfunction
 
-" Add mappin to call the function.
+" Add mapping to call the function.
 
 nnoremap <leader>a :call ToggleFormat()<CR>
 
