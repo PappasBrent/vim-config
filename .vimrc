@@ -65,6 +65,9 @@ set ttimeoutlen=0
 " (default is 4000ms). This also affects git gutter's update time as well.
 set updatetime=100
 
+" Only insert one space after rewrapping text with gq and similar commands.
+set nojoinspaces
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
