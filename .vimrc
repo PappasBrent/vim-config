@@ -275,7 +275,7 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-" Toggle auto formatting paragraph.
+" Toggle auto formatting paragraph to wrap text at column limit.
 " Taken from https://stackoverflow.com/a/71135553/6824430
 function! ToggleFormat()
     if &formatoptions !~ 'a'
@@ -287,11 +287,12 @@ function! ToggleFormat()
     set formatoptions
 endfunction
 
-" Add mapping to call the function.
+" Add a mapping to toggle wrapping text in paragraphs.
 nnoremap <leader>a :call ToggleFormat()<CR>
 
-" Before running a quickfix command, enable autowrite. This to make it easier
-" to rename across files without vim stopping to ask us to save changes.
+" Before running a quickfix command, enable autowrite. This is to make it
+" easier to rename across files without vim stopping to ask us to save
+" changes.
 autocmd QuickFixCmdPre * set autowrite
 
 " }}}
