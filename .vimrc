@@ -1,11 +1,14 @@
+" Use Vim defaults instead of Vi defaults.
 set nocompatible
 
+" Enable file type detection.
 filetype on
 
+" Enable file type specific plugins and indentation.
 filetype plugin on
-
 filetype indent on
 
+" Enable syntax highlighting.
 syntax on
 
 " Show column number.
@@ -17,18 +20,21 @@ set backspace=indent,eol,start
 " Turn on relative line numbering.
 set rnu
 
+" Use four spaces for tabs.
 set shiftwidth=4
-
 set tabstop=4
-
 set expandtab
 
+" Turn off backup files.
 set nobackup
 
+" Keep at least 10 lines above and below the cursor.
 set scrolloff=10
 
+" Do not soft-wrap text.
 set nowrap
 
+" Show matches as a search term is being typed.
 set incsearch
 
 " Turn off case-sensitive searching.
@@ -43,8 +49,11 @@ set showcmd
 " Show the mode you are on on the last line.
 set showmode
 
+" When a bracket is inserted, briefly jump to the matching one to show where
+" it is.
 set showmatch
 
+" Highlight previous search term matches.
 set hlsearch
 
 " Save the last 100 previous commands. Default is 20.
