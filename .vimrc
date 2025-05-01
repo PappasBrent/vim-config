@@ -14,6 +14,7 @@ set ruler
 " Make backspace work like other editors.
 set backspace=indent,eol,start
 
+" Turn on relative line numbering.
 set rnu
 
 set shiftwidth=4
