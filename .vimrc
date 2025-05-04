@@ -129,6 +129,11 @@ Plug 'godlygeek/tabular'
 
 Plug 'preservim/vim-markdown'
 
+" If you don't have nodejs and yarn
+" use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
+" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Dictionary
 Plug 'farconics/victionary'
 
@@ -205,6 +210,11 @@ let g:vim_markdown_folding_disabled = 1
 " issues.
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
+
+" MardownPreview: Mappings for normal mode
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " }}}
 
