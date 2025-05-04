@@ -121,9 +121,6 @@ Plug 'obcat/vim-hitspop'
 " Zen mode for Vim.
 Plug 'junegunn/goyo.vim'
 
-" Highlight active paragraph.
-Plug 'junegunn/limelight.vim'
-
 " Text-alignment plugin necessary for vim-markdown.
 Plug 'godlygeek/tabular'
 
@@ -154,10 +151,6 @@ let g:hitspop_timeout = 100
 
 " Goyo: Increase default width.
 let g:goyo_width = 85
-
-" Limelight: Goyo integration.
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
 
 " LSP: Set up language servers.
 if executable('clangd')
