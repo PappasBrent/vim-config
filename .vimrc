@@ -150,6 +150,11 @@ silent! colorscheme catppuccin_frappe
 " ALE: Only use the linters I specifically tell ALE to use.
 silent! let g:ale_linters_explicit = 1
 
+" Trim trailing whitespace in all files.
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+
 " vim-hitspop: Display match number in bottom right corner of the screen.
 let g:hitspop_line   = 'winbot'
 let g:hitspop_column = 'winright'
