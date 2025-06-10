@@ -138,6 +138,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 " Dictionary
 Plug 'farconics/victionary'
 
+" Live server for refreshing web apps as you work on them
+Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm install -g live-server' }
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
