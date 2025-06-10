@@ -140,6 +140,10 @@ Plug 'farconics/victionary'
 
 " Live server for refreshing web apps as you work on them
 Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm install -g live-server' }
+
+" CoC for code completion.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
