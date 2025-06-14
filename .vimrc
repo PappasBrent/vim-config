@@ -80,6 +80,10 @@ set updatetime=100
 " Only insert one space after rewrapping text with gq and similar commands.
 set nojoinspaces
 
+" Set the leader key to space. Do this here and not in the mappings section to
+" make sure the leader key is set correctly for Plugin configurations.
+let mapleader=" "
+
 " }}}
 
 " PLUGINS ---------------------------------------------------------------- {{{
