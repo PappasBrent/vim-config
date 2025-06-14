@@ -144,6 +144,9 @@ Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm insta
 " CoC for code completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Vimwiki for note-taking
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " Set plugin-specific settings after plug#end().
