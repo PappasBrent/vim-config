@@ -222,11 +222,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
 
-" MardownPreview: Mappings for normal mode
-nmap <C-s> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
-
 " }}}
 
 " MAPPINGS --------------------------------------------------------------- {{{
@@ -288,6 +283,11 @@ nnoremap zen :Goyo<CR>
 
 " Vimwiki: Export wiki to HTML and browse files.
 nnoremap <leader>wb :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
+
+" MardownPreview: Mappings for normal mode
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " }}}
 
