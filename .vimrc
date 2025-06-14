@@ -286,6 +286,9 @@ nnoremap <leader>gp :Git push<CR>
 " Goyo: Toggle.
 nnoremap zen :Goyo<CR>
 
+" Vimwiki: Export wiki to HTML and browse files.
+nnoremap <leader>wb :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
+
 " }}}
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
