@@ -230,8 +230,6 @@ let g:vim_markdown_auto_insert_bullets = 0
 
 " MAPPINGS --------------------------------------------------------------- {{{
 
-let mapleader=" "
-
 inoremap jj <esc>
 
 " Center the cursor vertically after moving to the next match during a search.
