@@ -196,7 +196,7 @@ Plug 'farconics/victionary'
 " Live server for refreshing web apps as you work on them
 Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm install -g live-server' }
 
-" CoC for code completion.
+" CoC for for LSP and code completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Vimwiki for note-taking
