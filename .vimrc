@@ -141,10 +141,6 @@ let &t_ut=''
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dense-analysis/ale'
-
-Plug 'preservim/nerdtree'
-
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'catppuccin/vim', { 'as': 'catppuccin', }
@@ -152,16 +148,6 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin', }
 Plug 'tpope/vim-fugitive'
 
 Plug 'airblade/vim-gitgutter'
-
-Plug 'prabirshrestha/vim-lsp'
-
-Plug 'prabirshrestha/asyncomplete.vim'
-
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-Plug 'mattn/vim-lsp-settings'
-
-Plug 'rhysd/vim-lsp-ale'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
@@ -209,14 +195,6 @@ call plug#end()
 
 silent! colorscheme catppuccin_frappe
 
-" ALE: Only use the linters I specifically tell ALE to use.
-silent! let g:ale_linters_explicit = 1
-
-" Trim trailing whitespace in all files.
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\}
-
 " vim-hitspop: Display match number in bottom right corner of the screen.
 let g:hitspop_line   = 'winbot'
 let g:hitspop_column = 'winright'
@@ -224,50 +202,6 @@ let g:hitspop_timeout = 100
 
 " Goyo: Increase default width.
 let g:goyo_width = 85
-
-" LSP: Set up language servers.
-if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd']},
-        \ 'allowlist': ['c', 'cpp', 'h', 'hh'],
-        \ })
-endif
-
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gs <plug>(lsp-document-symbol-search)
-    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
-    " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-
-    " Default is ???.
-    let g:lsp_format_sync_timeout = 1000
-    " Default is 200.
-    let g:lsp_completion_resolve_timeout = 100
-    " Default is 500.
-    let g:lsp_diagnostics_virtual_text_delay = 100
-    " Add more file extensions here for format on save.
-    autocmd! BufWritePre *.c,*.h,*.tex call execute('LspDocumentFormatSync')
-
-    " refer to doc to add more commands
-endfunction
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
 
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled = 1
@@ -318,22 +252,11 @@ nnoremap <A-q> gwap
 vnoremap <C-y> "+y
 nnoremap <C-y> "+Y
 
-" NERDTree: Toggle window.
-nnoremap <leader>t :NERDTreeToggle<CR>
-
-" ALE: Go to definition.
-nnoremap <leader>gd :ALEGoToDefinition<CR>
-
 " FZF: Search files (excluding files that Git ignores).
 nnoremap <leader>ff :GFiles<CR>
 
 " FZF: Ripgrep search.
 nnoremap <leader>fg :Rg<CR>
-
-" asyncomplete: Default mappings from GitHub.
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " Fugitive: Extra mappings.
 nnoremap <leader>gp :Git push<CR>
