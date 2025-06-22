@@ -331,6 +331,13 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " Fugitive: Extra mappings.
 nnoremap <leader>gp :Git push<CR>
 
+" GitGutter: Default mappings.
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+nmap <leader>hs <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
+
 " Goyo: Toggle.
 nnoremap zen :Goyo<CR>
 
