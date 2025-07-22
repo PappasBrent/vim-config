@@ -53,3 +53,19 @@
   ```
 
 - Open Vim, and while in normal mode run `:PlugInstall`.
+
+## Uninstall
+
+- Remove Vim from /usr/local/:
+
+  ```bash
+  sudo rm -fr /usr/local/bin/vim
+  sudo rm -fr /usr/local/share/vim
+  ```
+
+- Remove Vim's alternative:
+
+  ```bash
+  sudo update-alternatives --remove /usr/bin/vim /usr/local/bin/vim
+  ```
+
