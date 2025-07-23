@@ -1,92 +1,55 @@
-" SETTINGS ---------------------------------------------------------------- {{{
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETTINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible        " Use Vim defaults instead of Vi defaults.
 
-" Use Vim defaults instead of Vi defaults.
-set nocompatible
+filetype on             " Enable filetype detection.
+filetype plugin on      " Enable filtype-specific plugins.
+filetype indent on      " Enable filetype-specific indentation.
 
-" Enable file type detection.
-filetype on
+syntax on               " Enable syntax highlighting.
 
-" Enable file type specific plugins and indentation.
-filetype plugin on
-filetype indent on
+set ruler               " Show column number.
+set colorcolumn=80      " Color column 80.
+set rnu                 " Turn on relative line numbering.
 
-" Enable syntax highlighting.
-syntax on
+set backspace=indent,eol,start  " Make backspace work like other editors.
 
-" Show column number.
-set ruler
+set shiftwidth=4        " Use four spaces for shifting.
+set tabstop=4           " Use four spaces for tabs.
+set expandtab           " Replace tabs with spaces.
 
-" Make backspace work like other editors.
-set backspace=indent,eol,start
+set nobackup            " Turn off backup files.
 
-" Turn on relative line numbering.
-set rnu
+set scrolloff=10        " Keep at least 10 lines above and below the cursor.
+set nowrap              " Do not soft-wrap text.
 
-" Use four spaces for tabs.
-set shiftwidth=4
-set tabstop=4
-set expandtab
+set incsearch           " Show matches as a search term is being typed.
+set ignorecase          " Turn off case-sensitive searching.
+set smartcase           " Case-sensitive searching for capital letters only.
+set hlsearch            " Highlight previous search term matches.
 
-" Turn off backup files.
-set nobackup
+set showcmd             " Show commands at bottom of screen as they are typed.
+set showmode            " Show the mode you are on on the last line.
+set showmatch           " Briefly jump to matching bracket upon bracket insert.
 
-" Keep at least 10 lines above and below the cursor.
-set scrolloff=10
+set history=100         " Save the last 100 previous commands. Default is 20.
 
-" Do not soft-wrap text.
-set nowrap
+set wildmenu                " Enable pressing tab to open the autocomplete menu.
+set wildmode=list:longest   " Make wildmenu behave like Bash completion.
 
-" Show matches as a search term is being typed.
-set incsearch
+set termguicolors   " Enable terminal GUI colors for catppuccin theme.
+set ttimeoutlen=0   " Tell the terminal not to wait for sequences starting with the escape key.
 
-" Turn off case-sensitive searching.
-set ignorecase
+set updatetime=100  " After writing to a buffer, only wait 100ms before writing to swap file (default is 4000ms). This affects git gutter's update time as well.
 
-" Turn on case-sensitive searching if we are searching for capital letters.
-set smartcase
+set nojoinspaces    " Only insert one space after rewrapping text with gq and similar commands.
 
-" Show commands as you enter them in the bottom of the screen.
-set showcmd
+let mapleader=" "   " Set the leader key to space, before loading plugins.
 
-" Show the mode you are on on the last line.
-set showmode
-
-" When a bracket is inserted, briefly jump to the matching one to show where
-" it is.
-set showmatch
-
-" Highlight previous search term matches.
-set hlsearch
-
-" Save the last 100 previous commands. Default is 20.
-set history=100
-
-" Enable pressing tab to open the autocomplete menu.
-set wildmenu
-
-" Make wildmenu behave like Bash completion.
-set wildmode=list:longest
-
-" Enable terminal GUI colors for catppuccin theme.
-set termguicolors
-
-" Tell the terminal not to wait for sequences starting with the escape key.
-set ttimeoutlen=0
-
-" After writing to a buffer, only wait 100ms before writing to swap file
-" (default is 4000ms). This also affects git gutter's update time as well.
-set updatetime=100
-
-" Only insert one space after rewrapping text with gq and similar commands.
-set nojoinspaces
-
-" Set the leader key to space. Do this here and not in the mappings section to
-" make sure the leader key is set correctly for Plugin configurations.
-let mapleader=" "
-
-" }}}
-
-" TERMINAL SETINGS ------------------------------------------------------- {{{
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TERMINAL SETINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Mouse support
 set mouse=a
@@ -135,58 +98,31 @@ let &t_RT = "\e[23;2t"
 " using a color theme with a background color in terminals such as
 " kitty that do not support background color erase.
 let &t_ut=''
-" }}}
 
-" PLUGINS ---------------------------------------------------------------- {{{
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
-Plug 'catppuccin/vim', { 'as': 'catppuccin', }
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-Plug 'junegunn/fzf.vim'
-
-Plug 'christoomey/vim-tmux-navigator'
-
-Plug 'tpope/vim-commentary'
-
-" Easily surround text with quotes, brackets, etc.
-Plug 'tpope/vim-surround'
-
-" Display the current match number while iterating matches.
-Plug 'obcat/vim-hitspop'
-
-" Zen mode for Vim.
-Plug 'junegunn/goyo.vim'
-
-" Text-alignment plugin necessary for vim-markdown.
-Plug 'godlygeek/tabular'
-
-Plug 'preservim/vim-markdown'
-
-" If you don't have nodejs and yarn
-" use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
-" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-" Dictionary
-Plug 'farconics/victionary'
-
-" Live server for refreshing web apps as you work on them
-Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm install -g live-server' }
-
-" CoC for for LSP and code completion.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Vimwiki for note-taking
-Plug 'vimwiki/vimwiki'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}     " Multi-select.
+Plug 'catppuccin/vim', { 'as': 'catppuccin', }          " Catppuccin themes.
+Plug 'tpope/vim-fugitive'                               " Git support.
+Plug 'airblade/vim-gitgutter'                           " See git changes.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Fuzzy find.
+Plug 'junegunn/fzf.vim'                                 " Fuzzy find for Vim.
+Plug 'christoomey/vim-tmux-navigator'                   " Tmux + Vim.
+Plug 'tpope/vim-commentary'                             " Toggle comments.
+Plug 'tpope/vim-surround'                               " Add delimeters.
+Plug 'obcat/vim-hitspop'                                " Dispay search index.
+Plug 'junegunn/goyo.vim'                                " Zen mode for Vim.
+Plug 'godlygeek/tabular'                                " Text-alignment; dependency of vim-markdown.
+Plug 'preservim/vim-markdown'                           " Markdown features.
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Preview Markdown files.
+Plug 'farconics/victionary'                             " Dictionary
+Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm install -g live-server' } " Live server for refreshing web apps as you work on them
+Plug 'neoclide/coc.nvim', {'branch': 'release'}         " CoC for for LSP and code completion.
+Plug 'vimwiki/vimwiki'                                  " Vimwiki for note-taking
 
 call plug#end()
 
@@ -218,9 +154,9 @@ let g:vimwiki_list = [{
   \ 'template_default': 'default',
   \ 'template_ext': '.html'}]
 
-" }}}
-
-" MAPPINGS --------------------------------------------------------------- {{{
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 inoremap jj <esc>
 
@@ -431,15 +367,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" }}}
-
-" VIMSCRIPT -------------------------------------------------------------- {{{
-
-" Enable code folding using the marker method.
-augroup filetype_vim
-	autocmd!
-	autocmd FileType vim setlocal foldmethod=marker
-augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIMSCRIPT
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Toggle auto formatting paragraph to wrap text at column limit.
 " Taken from https://stackoverflow.com/a/71135553/6824430
@@ -461,9 +391,10 @@ nnoremap <leader>a :call ToggleFormat()<CR>
 " changes.
 autocmd QuickFixCmdPre * set autowrite
 
-" }}}
-
-" STATUS LINE ------------------------------------------------------------ {{{
-
-" }}}
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s)
+  autocmd FileType tex,plaintex let g:goyo_linenr=1
+  autocmd FileType tex,plaintex Goyo
+augroup end
 
