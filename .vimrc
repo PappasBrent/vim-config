@@ -86,7 +86,13 @@ set splitright                              " Vertical splits go right
 
 " Key mappings
 let mapleader=" "                   " Set leader key to space
-let maplocalleader=" "            " Set local leader key to space
+let maplocalleader=" "              " Set local leader key to space
+
+" Create undo directory if it doesn't exist
+let undodir=expand("$HOME/.vim/undodir")
+if isdirectory(undodir) == 0
+  call mkdir(undodir, "p")
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS 
