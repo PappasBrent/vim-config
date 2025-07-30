@@ -1,103 +1,92 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible        " Use Vim defaults instead of Vi defaults.
+set nocompatible            " Use Vim defaults instead of Vi defaults
 
-filetype on             " Enable filetype detection.
-filetype plugin on      " Enable filtype-specific plugins.
-filetype indent on      " Enable filetype-specific indentation.
+filetype on                 " Enable filetype detection
+filetype plugin on          " Enable filtype-specific plugins
+filetype indent on          " Enable filetype-specific indentation
 
-syntax on               " Enable syntax highlighting.
+syntax on                   " Enable syntax highlighting
 
-set ruler               " Show column number.
-set colorcolumn=80      " Color column 80.
-set rnu                 " Turn on relative line numbering.
+" Basic settings
+set number                  " Enable line numbers
+set ruler                   " Show column number
+set relativenumber          " Turn on relative line numbering
+set cursorline              " Highlight current line
+set nowrap                  " Do not soft-wrap text
+set scrolloff=10            " Keep at least 10 lines above and below the cursor
+set sidescrolloff=10        " Keep at least 8 columns left/right of the cursor
 
-set backspace=indent,eol,start  " Make backspace work like other editors.
+" Indentation
+let tabsize=4
+let &tabstop=tabsize        " Tab width
+let &shiftwidth=tabsize     " Shift width
+let &softtabstop=tabsize    " Soft tab stop
+set expandtab               " Replace tabs with spaces
+set smartindent             " Use smart auto-indenting
+set autoindent              " Use indent from current line
 
-set shiftwidth=4        " Use four spaces for shifting.
-set tabstop=4           " Use four spaces for tabs.
-set expandtab           " Replace tabs with spaces.
+" Search settings
+set ignorecase              " Turn off case-sensitive searching
+set smartcase               " Case-sensitive searching for capital letters only
+set hlsearch                " Highlight previous search term matches
+set incsearch               " Show matches as a search term is being typed
 
-set nobackup            " Turn off backup files.
+" Visual settings
+set termguicolors                           " Enable 24-bit colors
+set signcolumn=yes                          " Always show sign column
+set colorcolumn=80                          " Show column at 80 characters
+set showmatch                               " Highlight matching brackets
+set matchtime=2                             " How long to show matching bracket
+set cmdheight=1                             " Command line height
+set completeopt=menuone,noinsert,noselect   " Completion options
+set showcmd                                 " Show commands at bottom of screen as they are typed
+set noshowmode                              " Don't show mode in command line
+" set pumheight=10                            " Popup menu height
+" set pumblend = 10                         " Popup menu transparency
+" set winblend = 0                          " Floating window transparency
+set conceallevel=0                          " Don't hide markup
+let &concealcursor=""                       " Don't hide cursor line markup
+set lazyredraw                              " Don't redraw during macros
+set synmaxcol=300                           " Syntax highlighting limit
 
-set scrolloff=10        " Keep at least 10 lines above and below the cursor.
-set nowrap              " Do not soft-wrap text.
+" File handling
+set nobackup                                " Don't create backup files
+set nowritebackup                           " Don't create backup before writing
+set noswapfile                              " Don't create swap files
+set undofile                                " Persistent undo
+set undodir=$HOME/.vim/undodir              " Undo directory
+set updatetime=300                          " Faster completion
+set timeoutlen=0                            " Key timeout duration; don't wait for sequences starting with the escape key
+set ttimeoutlen=0                           " Key code timeout
+set autoread                                " Auto reload files changed outside vim
+set noautowrite                             " Don't auto save
 
-set incsearch           " Show matches as a search term is being typed.
-set ignorecase          " Turn off case-sensitive searching.
-set smartcase           " Case-sensitive searching for capital letters only.
-set hlsearch            " Highlight previous search term matches.
-
-set showcmd             " Show commands at bottom of screen as they are typed.
-set showmode            " Show the mode you are on on the last line.
-set showmatch           " Briefly jump to matching bracket upon bracket insert.
-
-set history=100         " Save the last 100 previous commands. Default is 20.
+" Behavior settings
+set hidden                                  " Allow hidden buffers
+set noerrorbells                            " No error bells
+set backspace=indent,eol,start              " Better backspace behavior
+set noautochdir                             " Don't auto change directory
+set iskeyword+=-                            " Treat dash as part of word
+set path+=**                                " Include subdirectories in search
+set selection=exclusive                     " Selection behavior
+set mouse=a                                 " Enable mouse support
+set clipboard^=unnamed,unnamedplus          " Use system clipboard
+set modifiable                              " Allow buffer modifications
+set encoding=utf8                           " Set encoding
+set nojoinspaces                            " Only insert one space after rewrapping text with gq and similar commands
 
 set wildmenu                " Enable pressing tab to open the autocomplete menu.
 set wildmode=list:longest   " Make wildmenu behave like Bash completion.
 
-set termguicolors   " Enable terminal GUI colors for catppuccin theme.
-set ttimeoutlen=0   " Tell the terminal not to wait for sequences starting with the escape key.
+" Split behavior
+set splitbelow                              " Horizontal splits go below
+set splitright                              " Vertical splits go right
 
-set updatetime=100  " After writing to a buffer, only wait 100ms before writing to swap file (default is 4000ms). This affects git gutter's update time as well.
-
-set nojoinspaces    " Only insert one space after rewrapping text with gq and similar commands.
-
-let mapleader=" "   " Set the leader key to space, before loading plugins.
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TERMINAL SETINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Mouse support
-set mouse=a
-set ttymouse=sgr
-set balloonevalterm
-" Styled and colored underline support
-let &t_AU = "\e[58:5:%dm"
-let &t_8u = "\e[58:2:%lu:%lu:%lum"
-let &t_Us = "\e[4:2m"
-let &t_Cs = "\e[4:3m"
-let &t_ds = "\e[4:4m"
-let &t_Ds = "\e[4:5m"
-let &t_Ce = "\e[4:0m"
-" Strikethrough
-let &t_Ts = "\e[9m"
-let &t_Te = "\e[29m"
-" Truecolor support
-let &t_8f = "\e[38:2:%lu:%lu:%lum"
-let &t_8b = "\e[48:2:%lu:%lu:%lum"
-let &t_RF = "\e]10;?\e\\"
-let &t_RB = "\e]11;?\e\\"
-" Bracketed paste
-let &t_BE = "\e[?2004h"
-let &t_BD = "\e[?2004l"
-let &t_PS = "\e[200~"
-let &t_PE = "\e[201~"
-" Cursor control
-let &t_RC = "\e[?12$p"
-let &t_SH = "\e[%d q"
-let &t_RS = "\eP$q q\e\\"
-let &t_SI = "\e[5 q"
-let &t_SR = "\e[3 q"
-let &t_EI = "\e[1 q"
-let &t_VS = "\e[?12l"
-" Focus tracking
-let &t_fe = "\e[?1004h"
-let &t_fd = "\e[?1004l"
-execute "set <FocusGained>=\<Esc>[I"
-execute "set <FocusLost>=\<Esc>[O"
-" Window title
-let &t_ST = "\e[22;2t"
-let &t_RT = "\e[23;2t"
-
-" vim hardcodes background color erase even if the terminfo file does
-" not contain bce. This causes incorrect background rendering when
-" using a color theme with a background color in terminals such as
-" kitty that do not support background color erase.
-let &t_ut=''
+" Key mappings
+let mapleader=" "                   " Set leader key to space
+let maplocalleader=" "            " Set local leader key to space
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS 
@@ -148,11 +137,25 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
 
 " Vimwiki: Use templates when exporting to HTML
-let g:vimwiki_list = [{
-  \ 'path_html': '~/vimwiki/public_html/',
-  \ 'template_path': '~/vimwiki/templates',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.html'}]
+let g:vimwiki_list = [
+  \ {
+      \ 'path': '~/vimwiki/',
+      \ 'path_html': '~/vimwiki/public_html/',
+      \ 'template_path': '~/vimwiki/templates',
+      \ 'template_default': 'default',
+      \ 'template_ext': '.html'
+  \ },
+  \ {
+      \ 'path': '~/documents/teaching/cop-3402-spring-2026-old',
+      \ 'path_html': '~/documents/teaching/cop3-402-spring-2026-old/public_html',
+      \ 'template_path': '~/documents/teaching/templates',
+      \ 'template_default': 'default',
+      \ 'template_ext': '.html'
+  \ }
+\ ]
+
+" Disable vimwiki mode if not in a vault.
+let g:vimwiki_global_ext = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
@@ -209,6 +212,7 @@ nnoremap zen :Goyo<CR>
 
 " Vimwiki: Export wiki to HTML and browse files.
 nnoremap <leader>wb :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
+nnoremap <leader>wc :VimwikiIndex 2<CR>
 
 " MardownPreview: Mappings for normal mode
 nmap <C-s> <Plug>MarkdownPreview
