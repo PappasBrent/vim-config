@@ -388,7 +388,7 @@ function! ToggleFormat()
 endfunction
 
 " Add a mapping to toggle wrapping text in paragraphs.
-nnoremap <leader>a :call ToggleFormat()<CR>
+nnoremap <leader>tf :call ToggleFormat()<CR>
 
 " Before running a quickfix command, enable autowrite. This is to make it
 " easier to rename across files without vim stopping to ask us to save
