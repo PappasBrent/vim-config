@@ -397,7 +397,6 @@ autocmd QuickFixCmdPre * set autowrite
 
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s)
   autocmd FileType tex,plaintex let g:goyo_linenr=1
   autocmd FileType tex,plaintex Goyo
 augroup end
