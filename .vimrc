@@ -58,8 +58,8 @@ set noswapfile                              " Don't create swap files
 set undofile                                " Persistent undo
 let &undodir=expand("$HOME/.vim/undodir")   " Undo directory
 set updatetime=300                          " Faster completion
-set timeoutlen=0                            " Key timeout duration; don't wait for sequences starting with the escape key
-set ttimeoutlen=0                           " Key code timeout
+set timeoutlen=500                          " Time out on mappings after 500ms
+set ttimeoutlen=0                           " Time out on key codes immediately
 set autoread                                " Auto reload files changed outside vim
 set noautowrite                             " Don't auto save
 
