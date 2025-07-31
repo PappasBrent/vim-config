@@ -43,7 +43,7 @@ set cmdheight=1                             " Command line height
 set completeopt=menuone,noinsert,noselect   " Completion options
 set showcmd                                 " Show commands at bottom of screen as they are typed
 set noshowmode                              " Don't show mode in command line
-" set pumheight=10                            " Popup menu height
+" set pumheight=10                          " Popup menu height
 " set pumblend = 10                         " Popup menu transparency
 " set winblend = 0                          " Floating window transparency
 set conceallevel=0                          " Don't hide markup
@@ -56,7 +56,7 @@ set nobackup                                " Don't create backup files
 set nowritebackup                           " Don't create backup before writing
 set noswapfile                              " Don't create swap files
 set undofile                                " Persistent undo
-set undodir=$HOME/.vim/undodir              " Undo directory
+let &undodir=expand("$HOME/.vim/undodir")   " Undo directory
 set updatetime=300                          " Faster completion
 set timeoutlen=0                            " Key timeout duration; don't wait for sequences starting with the escape key
 set ttimeoutlen=0                           " Key code timeout
