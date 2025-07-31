@@ -113,7 +113,6 @@ Plug 'obcat/vim-hitspop'                                " Dispay search index.
 Plug 'junegunn/goyo.vim'                                " Zen mode for Vim.
 Plug 'godlygeek/tabular'                                " Text-alignment; dependency of vim-markdown.
 Plug 'preservim/vim-markdown'                           " Markdown features.
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Preview Markdown files.
 Plug 'farconics/victionary'                             " Dictionary
 Plug 'https://github.com/wolandark/vim-live-server.git', { 'do': 'sudo npm install -g live-server' } " Live server for refreshing web apps as you work on them
 Plug 'neoclide/coc.nvim', {'branch': 'release'}         " CoC for for LSP and code completion.
@@ -219,11 +218,6 @@ nnoremap zen :Goyo<CR>
 " Vimwiki: Export wiki to HTML and browse files.
 nnoremap <leader>wb :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
 nnoremap <leader>wc :VimwikiIndex 2<CR>
-
-" MardownPreview: Mappings for normal mode
-nmap <C-s> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " Victionary: Set mappings.
 let g:victionary#map_defaults = 0
