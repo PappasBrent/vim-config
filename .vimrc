@@ -395,17 +395,17 @@ nnoremap <leader>tf :call ToggleFormat()<CR>
 " changes.
 autocmd QuickFixCmdPre * set autowrite
 
+" Add a mapping to quickly build projects.
+nnoremap <C-b> :! test -f Makefile && make 
+            \ \|\| test -f makefile && make
+            \ \|\| test -f build.sh && ./build.sh
+            \ \|\| echo error: no build system detected
+            \ <CR>
+
 augroup mygroup
   autocmd!
   " Open latex files with Goyo by default.
   autocmd FileType tex,plaintex let g:goyo_linenr=1
   autocmd FileType tex,plaintex Goyo
-
-  " If we are in a C/C++ project, add a mapping to easily build it.
-  autocmd FileType c,cpp nnoremap <buffer> <C-b> :! test -f Makefile && make 
-              \ \|\| test -f makefile && make
-              \ \|\| test -f build.sh && ./build.sh
-              \ \|\| echo error: no build system detected
-              \ <CR>
 augroup end
 
