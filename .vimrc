@@ -217,7 +217,6 @@ nnoremap zen :Goyo<CR>
 
 " Vimwiki: Export wiki to HTML and browse files.
 nnoremap <leader>wb :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
-nnoremap <leader>wc :VimwikiIndex 2<CR>
 
 " Victionary: Set mappings.
 let g:victionary#map_defaults = 0
