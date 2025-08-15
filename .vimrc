@@ -149,13 +149,6 @@ let g:vimwiki_list = [
       \ 'template_path': '~/vimwiki/templates',
       \ 'template_default': 'default',
       \ 'template_ext': '.html'
-  \ },
-  \ {
-      \ 'path': '~/documents/teaching/cop-3402-spring-2026-old',
-      \ 'path_html': '~/documents/teaching/cop3-402-spring-2026-old/public_html',
-      \ 'template_path': '~/documents/teaching/templates',
-      \ 'template_default': 'default',
-      \ 'template_ext': '.html'
   \ }
 \ ]
 
